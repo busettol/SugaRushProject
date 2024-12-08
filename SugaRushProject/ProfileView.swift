@@ -31,7 +31,7 @@ struct ProfileView: View {
                 
                 Spacer()
                 VStack{
-                    Text("THIS IS WHERE YOU WRITE THE CODE, LUCAS? idk whos on this ngl but good luck fr (this is where you code btw)")
+                    Text("THIS IS WHERE YOU WRITE THE CODE, LUCAS? idk whos on this ngl but good luck fr ")
                 }
                 Spacer()
                 
