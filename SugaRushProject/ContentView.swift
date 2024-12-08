@@ -24,7 +24,7 @@ struct ContentView: View {
                     Image(systemName: "menucard")
                 }.tag(1)
             
-            MenuView()
+            CheckoutView()
                 .tabItem {
                     Text("Checkout")
                     Image(systemName: "cart")

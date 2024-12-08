@@ -22,10 +22,11 @@ struct HomeView: View {
                         Image("image0")
                             .resizable()
                             .scaledToFit()
-                            .frame(height: 75)
+                            .frame(height: 49)
+                            .padding()
                     }
                     Spacer()
-                }.frame(height: 125)
+                }.frame(height: 119)
                 .background(Color(red: 176/255, green: 61/255, blue: 155/255))
                 
                 Spacer()
