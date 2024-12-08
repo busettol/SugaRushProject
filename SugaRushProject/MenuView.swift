@@ -12,7 +12,8 @@ struct MenuView: View {
         VStack{
             Text("THIS IS THE MENU PAGE")
             Text("YOUSAF PUTS STUFF HERE FR")
-        }    }
+        }
+    }
 }
 
 #Preview {

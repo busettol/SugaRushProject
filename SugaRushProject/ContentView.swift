@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var selectedView = 1
+    @State var selectedView = 0
+    
     var body: some View {
         TabView (selection: $selectedView){
             HomeView()
@@ -41,7 +42,6 @@ struct ContentView: View {
                     Image(systemName: "person.crop.circle")
                 }.tag(4)
         }
-        .padding()
     }
 }
 
