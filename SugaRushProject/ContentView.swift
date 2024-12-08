@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedView = 0
-    
+	@State var speechController = SpeechRecognizerController()
+	@State var mapsViewModel = MapViewModel()
+
     var body: some View {
         TabView (selection: $selectedView){
             HomeView()
@@ -42,7 +44,18 @@ struct ContentView: View {
                     Image(systemName: "person.crop.circle")
                 }.tag(4)
         }
-    }
+		.onAppear {
+			print("[ContentView] Requesting permission on appear...")
+			speechController.requestSpeechRecognitionPermission { authorized in
+				if !authorized {
+					print("[ContentView] Speech recognition not authorized.")
+				}
+			}
+
+			mapsViewModel.checkLocationAuthorization()
+
+		}
+	}
 }
 
 #Preview {

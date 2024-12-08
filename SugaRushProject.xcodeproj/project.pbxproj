@@ -11,6 +11,8 @@
 		1A8378072CF82330001DF2AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8378062CF82330001DF2AF /* ContentView.swift */; };
 		1A8378092CF82334001DF2AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A8378082CF82334001DF2AF /* Assets.xcassets */; };
 		1A83780C2CF82334001DF2AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A83780B2CF82334001DF2AF /* Preview Assets.xcassets */; };
+		675B44DE2D05856D008AF910 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B44DD2D05856D008AF910 /* MapViewModel.swift */; };
+		675B44E02D0586F8008AF910 /* SpeechToTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675B44DF2D0586F8008AF910 /* SpeechToTextViewModel.swift */; };
 		8F96397A2D0553F2005909F1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9639792D0553F2005909F1 /* HomeView.swift */; };
 		8F96397C2D055593005909F1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F96397B2D055593005909F1 /* ProfileView.swift */; };
 		8F96397E2D05559F005909F1 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F96397D2D05559F005909F1 /* MenuView.swift */; };
@@ -25,6 +27,8 @@
 		1A8378062CF82330001DF2AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1A8378082CF82334001DF2AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1A83780B2CF82334001DF2AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		675B44DD2D05856D008AF910 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		675B44DF2D0586F8008AF910 /* SpeechToTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewModel.swift; sourceTree = "<group>"; };
 		8F9639792D0553F2005909F1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8F96397B2D055593005909F1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8F96397D2D05559F005909F1 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 				8F96397F2D0559B8005909F1 /* DetailsView.swift */,
 				1A8378082CF82334001DF2AF /* Assets.xcassets */,
 				1A83780A2CF82334001DF2AF /* Preview Content */,
+				675B44DD2D05856D008AF910 /* MapViewModel.swift */,
+				675B44DF2D0586F8008AF910 /* SpeechToTextViewModel.swift */,
 			);
 			path = SugaRushProject;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				675B44E02D0586F8008AF910 /* SpeechToTextViewModel.swift in Sources */,
 				8F96397E2D05559F005909F1 /* MenuView.swift in Sources */,
 				8F96397C2D055593005909F1 /* ProfileView.swift in Sources */,
 				8F96397A2D0553F2005909F1 /* HomeView.swift in Sources */,
@@ -163,6 +170,7 @@
 				8F9639822D055A4D005909F1 /* MapsView.swift in Sources */,
 				8F9639842D055B66005909F1 /* CheckoutView.swift in Sources */,
 				8F9639802D0559B8005909F1 /* DetailsView.swift in Sources */,
+				675B44DE2D05856D008AF910 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +308,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use Location ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Get Person's voice";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Request for speech";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -330,6 +340,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Use Location ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Get Person's voice";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Request for speech";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
