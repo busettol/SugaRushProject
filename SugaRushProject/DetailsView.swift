@@ -9,8 +9,10 @@ import SwiftUI
 
 struct DetailsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text("THIS IS THE Details PAGE")
+            Text("YOU CAN ONLY MAKE IT HERE IF YOU CLICK ON AN EMELENT")
+        }    }
 }
 
 #Preview {

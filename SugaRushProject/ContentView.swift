@@ -8,10 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedView = 1
     var body: some View {
-        VStack {
-            Text("SugaRush")
-                .font(.largeTitle)
+        TabView (selection: $selectedView){
+            HomeView()
+                .tabItem {
+                    Text("Home")
+                    Image(systemName: "house")
+                }.tag(0)
+            
+            MenuView()
+                .tabItem {
+                    Text("Menu")
+                    Image(systemName: "menucard")
+                }.tag(1)
+            
+            MenuView()
+                .tabItem {
+                    Text("Checkout")
+                    Image(systemName: "cart")
+                }.tag(2)
+
+            MapsView()
+                .tabItem {
+                    Text("Maps")
+                    Image(systemName: "map")
+                }.tag(3)
+            
+            ProfileView()
+                .tabItem {
+                    Text("Profile")
+                    Image(systemName: "person.crop.circle")
+                }.tag(4)
         }
         .padding()
     }

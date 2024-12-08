@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text("THIS IS THE PROFILE PAGE")
+            Text("IDK WHO PUTS STUFF HERE FR, lucas? is he working on all profile signup stuff?")
+        }    }
 }
 
 #Preview {

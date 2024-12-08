@@ -9,8 +9,10 @@ import SwiftUI
 
 struct MenuView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        VStack{
+            Text("THIS IS THE MENU PAGE")
+            Text("YOUSAF PUTS STUFF HERE FR")
+        }    }
 }
 
 #Preview {
