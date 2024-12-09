@@ -17,17 +17,6 @@ struct DetailsView: View {
             
             ScrollView {
                 VStack(spacing: 20) {
-                    // Back Button
-                    HStack {
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss()
-                        }) {
-                            Image(systemName: "chevron.left")
-                            Text("Back")
-                        }
-                        Spacer()
-                    }
-                    .padding()
                     
                     // Item Image
                     Image(item.imageName)

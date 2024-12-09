@@ -28,60 +28,63 @@ struct MenuView: View {
     
     var body: some View {
         
-        ZStack{
-            LinearGradient(colors: [col1, col2], startPoint: .top, endPoint: .bottom).ignoresSafeArea()
-            VStack{
-                HStack{
-                    Spacer()
-                    VStack {
+        NavigationView{
+            ZStack{
+                LinearGradient(colors: [col1, col2], startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+                VStack{
+                    HStack{
                         Spacer()
-                        Image("image0")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 49)
-                            .padding()
-                    }
-                    Spacer()
-                }.frame(height: 125)
-                .background(Color(red: 176/255, green: 61/255, blue: 155/255))
-                
-                Text("OUR MENU")
+                        VStack {
+                            Spacer()
+                            Image("image0")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 49)
+                                .padding()
+                        }
+                        Spacer()
+                    }.frame(height: 125)
+                        .background(Color(red: 176/255, green: 61/255, blue: 155/255))
+                    
+                    Text("OUR MENU")
                         .font(.title)
                         .padding()
-                                    
-                ScrollView {
-                    VStack(spacing: 15) {
-                        ForEach(menuItems) { item in
-                            NavigationLink(destination: DetailsView(item: item)) {
-                                HStack {
-                                    Image(item.imageName)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 80, height: 80)
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(item.name)
-                                            .font(.headline)
-                                        Text("$\(String(format: "%.2f", item.price))")
-                                            .font(.subheadline)
-                                            .foregroundColor(.secondary)
+                    
+                    ScrollView {
+                        VStack(spacing: 15) {
+                            ForEach(menuItems) { item in
+                                NavigationLink(destination: DetailsView(item: item)) {
+                                    HStack {
+                                        Image(item.imageName)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 80, height: 80)
+                                        
+                                        VStack(alignment: .leading) {
+                                            Text(item.name)
+                                                .font(.headline)
+                                            Text("$\(String(format: "%.2f", item.price))")
+                                                .font(.subheadline)
+                                                .foregroundColor(.secondary)
+                                        }
+                                        
+                                        Spacer()
                                     }
-                                    
-                                    Spacer()
+                                    .padding()
+                                    .background(Color.white.opacity(0.1))
+                                    .cornerRadius(10)
                                 }
-                                .padding()
-                                .background(Color.white.opacity(0.1))
-                                .cornerRadius(10)
                             }
                         }
+                        .padding()
                     }
-                    .padding()
-                }
-                
-                Rectangle()
-                    .fill(Color(red: 250/255, green: 160/255, blue: 160/255))
-                    .frame(height: 100)
-            }.ignoresSafeArea()
+                    
+                    Rectangle()
+                        .fill(Color(red: 250/255, green: 160/255, blue: 160/255))
+                        .frame(height: 100)
+                }.ignoresSafeArea()
+            }
+            .navigationBarHidden(true)
         }
     }
 }
