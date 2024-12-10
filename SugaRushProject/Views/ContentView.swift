@@ -38,7 +38,7 @@ struct ContentView: View {
                     Image(systemName: "map")
                 }.tag(3)
             
-            ProfileView()
+            AccountCreation()
                 .tabItem {
                     Text("Profile")
                     Image(systemName: "person.crop.circle")
