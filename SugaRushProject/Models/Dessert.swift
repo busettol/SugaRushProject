@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Dessert : Codable {
+	let name
+	,description : String
+	let price : Int
+	var quantity : Int
+}

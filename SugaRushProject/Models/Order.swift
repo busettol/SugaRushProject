@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+struct Order : Codable {
+	let id = UUID()
+	let date : Date = Date()
+
+	var dessertOrder : [Dessert]
+	let person : String
+	let extraInformation : String
+}
