@@ -37,7 +37,13 @@ struct ContentView: View {
                     Text("Maps")
                     Image(systemName: "map")
                 }.tag(3)
-            
+
+			UsersOrderView()
+				.tabItem {
+					Text("Orders")
+					Image(systemName: "list.bullet")
+				}.tag(3)
+
             AccountCreation()
                 .tabItem {
                     Text("Profile")
