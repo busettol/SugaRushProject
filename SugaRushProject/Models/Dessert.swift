@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dessert : Codable {
+struct Dessert : Codable, Hashable{
 	let name
 	,description : String
 	let price : Int

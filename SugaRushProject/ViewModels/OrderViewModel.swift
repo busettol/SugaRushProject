@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseFirestore
+import FirebaseAuth
 //import FirebaseFirestoreSwift
 //display orders
 
@@ -44,29 +45,27 @@ class OrderViewModel {
 		}
 	}
 
-	func retrieveDataFromFirestore(completion: @escaping ([Order]?) -> Void) {
-		db.collection("orders").getDocuments { (querySnapshot, error) in
-			if let error = error {
-				print("Error getting documents: \(error)")
-				completion(nil)
-				return
-			}
+	func getSignedInUserEmail() -> String? {
+		if let user = Auth.auth().currentUser {
+			return user.email
+		} else {
+			print("No user is signed in.")
+			return nil
+		}
+	}
 
-			guard let documents = querySnapshot?.documents else {
-				print("No documents found")
-				completion(nil)
-				return
-			}
-
+	func retrieveDataFromFirestore() async -> [Order] {
+		do {
+			let querySnapshot = try await db.collection("orders").getDocuments()
 			var retrievedOrders: [Order] = []
 
-			for document in documents {
+			for document in querySnapshot.documents {
 				let data = document.data()
 
 				guard let personName = data["person"] as? String,
 					  let extraInfo = data["extraInformation"] as? String,
 					  let dessertData = data["dessertOrder"] as? [[String: Any]] else {
-					print("Could not parse order data")
+					print("Could not parse order data for document: \(document.documentID)")
 					continue
 				}
 
@@ -77,7 +76,6 @@ class OrderViewModel {
 						  let quantity = dessertDict["quantity"] as? Int else {
 						return nil
 					}
-
 					return Dessert(name: name, description: description, price: price, quantity: quantity)
 				}
 
@@ -85,7 +83,13 @@ class OrderViewModel {
 				retrievedOrders.append(order)
 			}
 
-			completion(retrievedOrders)
+			return retrievedOrders
+		} catch {
+			print("Error retrieving orders from Firestore: \(error)")
+			return []
 		}
 	}
+
+
+
 }
