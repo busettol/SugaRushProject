@@ -57,7 +57,7 @@ struct CheckoutView: View {
 							.cornerRadius(10)
 					}
 					.padding()
-                    Text("THIS IS THE CHECKOUT PAGE \n MIGHT GET RID OF IT LATER WHO KNOWS (this is where you code btw)")
+                    Spacer()
                 }
                 Spacer()
                 
