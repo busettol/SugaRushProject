@@ -15,11 +15,20 @@ struct UsersOrderView: View {
 
 	var body: some View {
 		VStack {
+
+
+			if(orderList.count < 1){
+				Text("Empty for now...")
+			}
+			else{
 			List {
 				ForEach(orderList) { order in
 					Section(header: Text("Order by \(order.person)")) {
+
+
 						ForEach(order.dessertOrder, id: \.self) { dessert in
-							
+
+
 							if(isFilter && order.person == self.email){
 								HStack {
 									Text("\(dessert.quantity)x \(dessert.name)")
@@ -33,6 +42,7 @@ struct UsersOrderView: View {
 					}
 				}
 			}
+		}
 
 			Button("See your orders"){
 				isFilter = isFilter ? false : true
@@ -47,6 +57,9 @@ struct UsersOrderView: View {
 					print("Signed-in user's email: \(email)")
 				} else {
 					print("No user is signed in.")
+					DispatchQueue.main.async{
+						//NotificationAlert.show(title: "Alert", message: "You're not signed in.")
+					}
 				}
 			}
 		}
