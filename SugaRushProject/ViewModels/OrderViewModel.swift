@@ -54,6 +54,34 @@ class OrderViewModel {
 		}
 	}
 
+	func clearDatabase() {
+		db.collection("orders").getDocuments { (querySnapshot, error) in
+			if let error = error {
+				print("Error retrieving documents: \(error)")
+				return
+			}
+
+			guard let documents = querySnapshot?.documents else {
+				print("No documents to delete.")
+				return
+			}
+
+			let batch = self.db.batch()
+			for document in documents {
+				batch.deleteDocument(document.reference)
+			}
+
+			batch.commit { batchError in
+				if let batchError = batchError {
+					print("Error clearing database: \(batchError)")
+				} else {
+					print("Database cleared successfully.")
+				}
+			}
+		}
+	}
+
+
 	func retrieveDataFromFirestore() async -> [Order] {
 		do {
 			let querySnapshot = try await db.collection("orders").getDocuments()
