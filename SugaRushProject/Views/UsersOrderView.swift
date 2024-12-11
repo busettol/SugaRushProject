@@ -23,29 +23,50 @@ struct UsersOrderView: View {
 			else{
 			List {
 				ForEach(orderList) { order in
-					Section(header: Text("Order by \(order.person)")) {
+
+					
 
 
-						ForEach(order.dessertOrder, id: \.self) { dessert in
-
-
-							if(isFilter && order.person == self.email){
-								HStack {
-									Text("\(dessert.quantity)x \(dessert.name)")
+					Section{
+						if(order.person == "User"){
+							Text("This is a test dummy.")
+						}
+						
+					ForEach(order.dessertOrder, id: \.self) { dessert in
+							VStack{
+								if(isFilter && order.person == self.email){
+									HStack {
+										Text("\(dessert.quantity)x \(dessert.name)")
+									}
+								}else{
+									HStack {
+										Text("\(dessert.quantity)x \(dessert.name)")
+									}
 								}
-							}else{
-								HStack {
-									Text("\(dessert.quantity)x \(dessert.name)")
-								}
+							}
+
+						}
+
+						if(isFilter){
+							VStack{
+								Text("\(order.person)")
+								Text("\(order.extraInformation)")
+								Text("\(order.date)")
+
 							}
 						}
 					}
+
+
 				}
 			}
 		}
 
 			Button("See your orders"){
 				isFilter = isFilter ? false : true
+			}
+			Button("Clear orders"){
+				ordervm.clearDatabase()
 			}
 		}
 		.onAppear {
